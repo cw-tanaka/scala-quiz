@@ -54,15 +54,15 @@ sealed trait Node {
  */
 case class Branch(left: Node, value: Int, right: Node) extends Node {
 
-  val size: Int = ???
+  val size: Int = left.size + right.size + 1
 
-  val sum: Int = ???
+  val sum: Int = left.sum + right.sum + value
 
-  val avg: Double = ???
+  val avg: Double = sum / size
 
-  val max: Int = ???
+  val max: Int = Math.max(left.max, right.max)
 
-  val min: Int = ???
+  val min: Int = Math.min(left.min, right.min)
 
   def find(value: Int): Option[Node] = ???
 
@@ -75,17 +75,17 @@ case class Branch(left: Node, value: Int, right: Node) extends Node {
  */
 case class Leaf(value: Int) extends Node {
 
-  val size: Int = ???
+  val size: Int = 1
 
-  val sum: Int = ???
+  val sum: Int = value
 
-  val avg: Double = ???
+  val avg: Double = value
 
-  val max: Int = ???
+  val max: Int = value
 
-  val min: Int = ???
+  val min: Int = value
 
-  def find(value: Int): Option[Node] = ???
+  def find(value: Int): Option[Node] = if (value == this.value) Some(this) else None
 
 }
 

@@ -36,7 +36,7 @@ class MyListSpec extends FunSpec with Matchers {
     }
   }
 
-  describe("MyList#++") {
+  ignore("MyList#++") {
     it("should return a new MyList with elements appended") {
       MyList(1, 2) ++ MyList(3, 4) shouldEqual MyList(1, 2, 3, 4)
     }
@@ -48,7 +48,7 @@ class MyListSpec extends FunSpec with Matchers {
     }
   }
 
-  describe("MyList#flatMap") {
+  ignore("MyList#flatMap") {
     it("should apply an operator to each element in the list and flatten") {
       MyList(MyList(1, 2), MyList(3, 4), MyList(5, 6), MyList(7, 8)).flatMap(_.map(_ * 2)) shouldEqual MyList(2, 4, 6, 8, 10, 12, 14, 16)
     }
@@ -67,7 +67,7 @@ class MyListSpec extends FunSpec with Matchers {
     }
   }
 
-  describe("for comprehension") {
+  ignore("for comprehension") {
     it("should provide for comprehension") {
       (for {
         suit <- MyList("Diamond", "Heart", "Spade", "Club")
